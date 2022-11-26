@@ -1,0 +1,66 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {"slug": "th-white", "color": "rgb(255,255,255)", "name": "Thunder White"},
+                { "slug": "th-gray-100", "color": "rgb(243 244 246)", "name": "Thunder Gray 100" },
+                { "slug": "th-gray-200", "color": "rgb(229 231 235)", "name": "Thunder Gray 200" },
+                { "slug": "th-gray-300", "color": "rgb(209 213 219)", "name": "Thunder Gray 300" },
+                { "slug": "th-gray-400", "color": "rgb(156 163 175)", "name": "Thunder Gray 400" },
+                { "slug": "th-gray-500", "color": "rgb(107 114 128)", "name": "Thunder Gray 500" },
+                { "slug": "th-gray-600", "color": "rgb(75 85 99)", "name": "Thunder Gray 600" },
+                { "slug": "th-gray-700", "color": "rgb(55 65 81)", "name": "Thunder Gray 700" },
+                { "slug": "th-gray-800", "color": "rgb(31 41 55)", "name": "Thunder Gray 800" },
+                { "slug": "th-gray-900", "color": "rgb(17 24 39)", "name": "Thunder Gray 900" },
+                { "slug": "th-primary", "color": "rgb(239 68 68)", "name": "Thunder Primary" },
+                { "slug": "th-accent", "color": "rgb(67 56 202)", "name": "Thunder Accent" },
+                { "slug": "th-success", "color": "rgb(52 211 153)", "name": "Thunder Success" },
+                { "slug": "th-info", "color": "rgb(96 165 250)", "name": "Thunder Info" },
+                { "slug": "th-warning", "color": "rgb(251 146 60)", "name": "Thunder Warning" },
+                { "slug": "th-danger", "color": "rgb(236 72 153)", "name": "Thunder Danger" }
+            ],
+            "background": true,
+            "text": true,
+            "link": true,
+            "duotone": [
+                {"slug": "th-orange-blue", "colors": ["#005a87","#ba5600"], "name": "Thunder Orange Blue"}
+            ],
+            "defaultGradients": false,
+            "gradients": [
+                {
+                    "slug": "th-light-purple",
+                    "name": "Thunder Sky Light",
+                    "gradient": "radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );"
+                }
+            ]
+        },
+        "blocks": {
+            "core/site-title": {
+                "color": {
+                    "defaultPalette": true,
+                    "palette": [
+                        { "slug": "th-primary", "color": "#bf804a", "name": "Thunder Primary" }
+                    ],
+                    "link": true,
+                    "gradients": [],
+                    "customGradient": false
+                }
+            },
+            "core/cover": {
+                "color": {
+                    "duotone": [],
+                    "customDuotone": false
+                }
+            }
+        }
+    },
+    "styles": {
+        "color": {
+            "text": "var(--wp--preset--color--th-gray-700)",
+            "background": "var(--wp--preset--color--th-white)"
+        }
+    }
+}
