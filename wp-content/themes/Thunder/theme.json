@@ -42,11 +42,21 @@
                 "color": {
                     "defaultPalette": true,
                     "palette": [
-                        { "slug": "th-primary", "color": "#bf804a", "name": "Thunder Primary" }
+                      { "slug": "th-primary", "color": "#ef4444", "name": "Thunder Primary" }
                     ],
                     "link": true,
+                    "custom": false,
                     "gradients": [],
                     "customGradient": false
+                },
+                "typography": {
+                    "fontFamilies": [
+                      { 
+                        "fontFamily": "Pacifico, sans-serif", 
+                        "slug": "th-pacifico",
+                        "name": "Thunder Pacifico" 
+                      }
+                    ]
                 }
             },
             "core/cover": {
@@ -54,13 +64,113 @@
                     "duotone": [],
                     "customDuotone": false
                 }
+            },
+            "core/post-featured-image": {
+                "appearanceTools": true,
+                "spacing": {
+                    "customSpacingSize": true,
+                    "blockGap": true                 
+                },
+                "layout": {
+                    "wideSize": ""
+                }
             }
+        },
+        "typography": {
+            "fontFamilies": [
+                { 
+                  "fontFamily": "Rubik, sans-serif", 
+                  "slug": "th-rubik",
+                  "name": "Thunder Rubik" 
+                }
+              ],
+            "fontSizes": [
+                { "slug": "small", "size": "0.75rem", "name": "Small" },
+                { "slug": "medium", "size": "1.25rem", "name": "Medium" },
+                { "slug": "large", "size": "2.25rem", "name": "Large" },
+                { "slug": "x-large", "size": "3rem", "name": "Extra Large" },
+                { "slug": "gigantic", "size": "3.75rem", "name": "Gigantic" }
+              ],
+            "customFontSize": true,
+            "lineHeight": true,
+            "dropCap": true,
+            "fontStyle": true,
+            "fontWeight": true,
+            "letterSpacing": true,
+            "textDecoration": true,
+            "textTransform": true
+        },
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "customSpacingSize": true,
+            "units": [
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw",
+                "%"
+            ],
+            "blockGap": true
         }
+
     },
     "styles": {
         "color": {
             "text": "var(--wp--preset--color--th-gray-700)",
             "background": "var(--wp--preset--color--th-white)"
+        },
+        "elements": {
+            "link": {
+            "color": {
+                "text": "var(--wp--preset--color--th-primary)"
+            }
+            }
+        },
+        "blocks": {
+            "core/button": {
+            "color": {
+                "gradient": "var(--wp--preset--gradient--th-summer-dog)"
+            }
+            },
+            "core/pullquote": {
+            "border": {
+                "width": "2px",
+                "radius": "10px",
+                "style": "solid",
+                "color": "var(--wp--preset--color--th-primary)"
+            }
+            },
+            "core/site-title": {
+            "typography": {
+                "fontFamily": "var(--wp--preset--font-family--th-pacifico)"
+            }
+            }
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--th-rubik)",
+            "fontSize": "16px",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+            "lineHeight": "inherit",
+            "textDecoration": "none",
+            "textTransform": "none"
+        },
+        "spacing": {
+            "margin": {
+            "top": "0px",
+            "bottom": "0px",
+            "left": "0px",
+            "right": "0px"
+            },
+            "padding": {
+            "top": "0px",
+            "bottom": "0px",
+            "left": "0px",
+            "right": "0px"
+            },
+            "blockGap": "4rem"
         }
     }
 }

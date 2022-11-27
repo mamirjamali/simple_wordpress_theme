@@ -4,8 +4,8 @@ function th_enqueue(){
     wp_register_style( 
         'th_rubik_and_pacifico',
         'https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:wght@300;400;500;700&display=swap',
-        [],
-        '1.0'
+         [],
+        null
     );
     wp_register_style( 
         'th_bootstrap_icons',
