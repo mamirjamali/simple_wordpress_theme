@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "thunder-plus/fancy-header",
+  "title": "Fancy Header",
+  "category": "text",
+  "description": "Add a header with a hover effect",
+  "keywords": [
+    "header",
+    "underline",
+    "hover"
+  ],
+  "version": "1",
+  "textdomain": "thunder-plus",
+  "editorScript": [
+    "file:./index.js"
+  ],
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
+    },
+    "underline_color": {
+      "type": "string",
+      "default": "#f87171"
+    }
+  },
+  "style": "file:./index.css"
+}
