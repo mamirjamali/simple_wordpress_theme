@@ -24,9 +24,12 @@ if(!function_exists('add_action')){
 define('THP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 //Includes
-include(THP_PLUGIN_DIR . "includes/register-blocks.php");
-include(THP_PLUGIN_DIR . "includes/blocks/search-form.php");
-include(THP_PLUGIN_DIR . "includes/blocks/page_header.php");
+$rootFiles         = glob(THP_PLUGIN_DIR."includes/*.php");
+$subdirectoryFiles = glob(THP_PLUGIN_DIR."includes/**/*.php");
+$allFiles          = array_merge($rootFiles, $subdirectoryFiles);
 
+foreach($allFiles as $filename){
+    include_once($filename);
+}
 //Hooks
 add_action('init', 'thp_register_blocks');
