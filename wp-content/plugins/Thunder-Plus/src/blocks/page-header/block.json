@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "thunder-plus/page-header",
+    "title": "Page Heaeder",
+    "category": "text",
+    "description": "Adds a page header",
+    "textdomain": "thunder-plus",
+    "attributes": {
+        "content":{
+            "type": "string",
+            "default": ""
+        },
+        "showCategory":{
+            "type": "boolean",
+            "default": false 
+        }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./index.css"
+}

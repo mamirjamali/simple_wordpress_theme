@@ -5,6 +5,9 @@ function thp_register_blocks(){
         ['name' => 'fancy-header'],
         ['name' => 'search-form', 'options'=>[
             'render_callback' => 'thp_search_form_render_cb'
+        ]],
+        ['name' => 'page-header', 'options' =>[
+            'render_callback' => 'thp_page_header_render_cb'
         ]]
     ];
 

@@ -26,6 +26,7 @@ define('THP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 //Includes
 include(THP_PLUGIN_DIR . "includes/register-blocks.php");
 include(THP_PLUGIN_DIR . "includes/blocks/search-form.php");
+include(THP_PLUGIN_DIR . "includes/blocks/page_header.php");
 
 //Hooks
 add_action('init', 'thp_register_blocks');
