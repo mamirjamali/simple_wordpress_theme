@@ -11,6 +11,9 @@ function thp_register_blocks(){
         ]],
         ['name' => 'header-tools', 'options' =>[
             'render_callback' => 'thp_header_tools_render_cb'
+        ]],
+        ['name' => 'auth-modal', 'options' =>[
+            'render_callback' => 'thp_auth_modal_render_cb'
         ]]
     ];
 
