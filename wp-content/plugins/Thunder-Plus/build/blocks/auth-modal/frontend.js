@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Chaging the Modal form on clicking Tabs
   const tabs = document.querySelectorAll('.tabs a');
   const signinForm = document.querySelector('#signin-tab');
-  const signupFrom = document.querySelector('#signup-tab');
+  const signupForm = document.querySelector('#signup-tab');
   tabs.forEach(tab => {
     tab.addEventListener('click', event => {
       event.preventDefault();
@@ -34,14 +34,54 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       event.currentTarget.classList.add('active-tab');
       const activeTab = event.currentTarget.getAttribute('href');
-      if (activeTab === signinForm) {
+      if (activeTab === '#signin-tab') {
         signinForm.style.display = "block";
-        signupFrom.style.display = "none";
+        signupForm.style.display = "none";
       } else {
         signinForm.style.display = "none";
-        signupFrom.style.display = "block";
+        signupForm.style.display = "block";
       }
     });
+  });
+  //Disabling fieldset after submition and sending the data
+  signupForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const signupFieldSet = signupForm.querySelector('fieldset');
+    signupFieldSet.setAttribute('disabled', true);
+    const signupStatus = signupForm.querySelector('#signup-status');
+    signupStatus.innerHTML = `
+        <div class="modal-status modal-status-info">
+         Please Wait! We are creating your account
+        </div>
+        `;
+    const formData = {
+      username: signupForm.querySelector('#su-name').value,
+      email: signupForm.querySelector('#su-email').value,
+      password: signupForm.querySelector('#su-password').value
+    };
+    const response = await fetch(thp_auth_rest.signup, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+    const responseJSON = await response.json();
+    if (responseJSON.status === 2) {
+      signupStatus.innerHTML = `
+            <div class="modal-status modal-status-success">
+               Success! Your account has been created.
+            </div>
+            `;
+      location.reload();
+    } else {
+      signupFieldSet.removeAttribute('disabled');
+      signupStatus.innerHTML = `
+            <div class="modal-status modal-status-danger">
+               Unable to create account! Please try again later.
+            </div>
+            `;
+    }
   });
 });
 /******/ })()

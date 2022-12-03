@@ -31,5 +31,8 @@ $allFiles          = array_merge($rootFiles, $subdirectoryFiles);
 foreach($allFiles as $filename){
     include_once($filename);
 }
+
 //Hooks
 add_action('init', 'thp_register_blocks');
+add_action('rest_api_init', 'thp_rest_api_init');
+add_action('wp_enqueue_scripts', 'thp_enqueue_scripts');
