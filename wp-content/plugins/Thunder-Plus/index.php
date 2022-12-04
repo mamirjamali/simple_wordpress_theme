@@ -33,6 +33,12 @@ foreach($allFiles as $filename){
 }
 
 //Hooks
+register_activation_hook( __FILE__, 'thp_active_plugin' );
 add_action('init', 'thp_register_blocks');
 add_action('rest_api_init', 'thp_rest_api_init');
 add_action('wp_enqueue_scripts', 'thp_enqueue_scripts');
+add_action( 'init', 'thp_recipe_post_type');
+add_action('cuisine_add_form_fields', 'thp_cuisine_add_form_fields');
+add_action( 'create_cuisine', 'thp_save_cuisine_meta');
+add_action('cuisine_edit_form_fields', 'thp_cuisine_edit_form_fields');
+add_action('edited_cuisine', 'thp_save_cuisine_meta');
