@@ -7,4 +7,10 @@ function thp_rest_api_init(){
         'callback' => 'thp_rest_api_signup_handler',
         'permission_callback' => '__return_true'
     ]);
+
+    register_rest_route( 'thp/v1', '/signin', [
+        'methods' => 'POST',
+        'callback' => 'thp_rest_api_signin_handler',
+        'permission_callback' => '__return_true'
+    ]);
 }

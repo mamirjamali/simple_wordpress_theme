@@ -3,7 +3,8 @@
 function thp_enqueue_scripts(){
 
     $authURL = json_encode([
-        'signup' => rest_url( 'thp/v1/signup' )
+        'signup' => rest_url( 'thp/v1/signup' ),
+        'signin'  => rest_url('thp/v1/signin')
     ]);
 
     wp_add_inline_script( 
