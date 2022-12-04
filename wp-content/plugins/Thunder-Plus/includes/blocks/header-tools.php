@@ -1,11 +1,6 @@
 <?php
 
 function thp_header_tools_render_cb($atts){
-    $user = wp_get_current_user();
-    $name = $user->exists() ? $user->user_login : "Sign in";
-    $openClass = $user->exists() ? '' : 'open-modal';
-
-    print_r($user->exists());
     ob_start();
 ?>
 <div class="wp-block-thunder-plus-header-tools">
@@ -13,12 +8,12 @@ function thp_header_tools_render_cb($atts){
     if($atts['showAuth'])
     {
     ?>
-    <a class="signin-link <?php echo $openClass ?>" href="#">
+    <a class="signin-link open-modal" href="#">
         <div class="signin-icon">
             <i class="bi bi-person-circle"></i>
         </div>
         <div class="signin-text">
-            <small>Hello, <?php echo $name ?></small>
+            <small>Hello, Sign in</small>
             My Account
         </div>
     </a>  
