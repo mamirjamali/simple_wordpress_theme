@@ -30,7 +30,7 @@ registerBlockType('thunder-plus/auth-modal', {
           </PanelBody>
         </InspectorControls>
         <div { ...blockProps }>
-          {__('This block is not previewable from the editor. View your site for a live demo.', 'thunder-plus')}
+          {__('This block is not previewable from the editor. View your site for a live demo. You should be logged out to see the modal', 'thunder-plus')}
         </div>
       </>
     );

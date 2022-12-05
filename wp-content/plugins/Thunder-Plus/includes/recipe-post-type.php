@@ -55,4 +55,11 @@ function thp_recipe_post_type(){
         'show_in_rest' => true
     ] );
 
+    register_term_meta( 'cuisine', 'more_info_url', [
+        'type' => 'string',
+        'discription' => __('A URL for more information on a cuisine', 'thunder-plus'),
+        'single' => true,
+        'show_in_rest' => true,
+        'default' =>'#'
+    ] );
     }

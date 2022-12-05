@@ -1,5 +1,8 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {useEntityProp} from '@wordpress/core-data';
+import { Spinner } from '@wordpress/components'
+import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import icons from '../../icons.js';
 import './main.css';
@@ -8,9 +11,31 @@ registerBlockType('thunder-plus/recipe-summary', {
   icon: {
     src: icons.recipe
   },
-  edit({ attributes, setAttributes }) {
+  edit({ attributes, setAttributes, context }) {
     const { prepTime, cookTime, course } = attributes;
     const blockProps = useBlockProps();
+    const {postId} = context;
+
+    const [termIDs] = useEntityProp(
+      'postType', 'recipe', 'cuisine', postId
+      );
+    
+    const {cuisines, isLoading} = useSelect((select)=>{
+      const { getEntityRecords, isResolving } = select('core')
+
+      const taxonomyArgs = [
+        'taxonomy', 
+        'cuisine',
+        {
+        include: termIDs
+       }
+      ]
+
+      return{
+        cuisines : getEntityRecords(...taxonomyArgs),
+        isLoading: isResolving('getEntityRecords', taxonomyArgs)
+      }
+    }, [termIDs]);
 
     return (
       <>
@@ -56,6 +81,25 @@ registerBlockType('thunder-plus/recipe-summary', {
               <div className="recipe-metadata">
                 <div className="recipe-title">{__('Cuisine', 'thunder-plus')}</div>
                 <div className="recipe-data recipe-cuisine">
+                  {
+                    isLoading &&
+                    <Spinner/>
+                  }
+                  {
+                    !isLoading && cuisines && cuisines.map( (item, index) => {
+                      const comma = cuisines[index + 1] ? ',' : '';
+
+                      return(
+                        <>
+                          <a href={item.meta.more_info_url}>
+                            {item.name}
+                          </a>{comma}                      
+                        </>
+
+                      )
+                      
+                    })
+                  }
                 </div>
               </div>
               <i className="bi bi-egg-fried"></i>

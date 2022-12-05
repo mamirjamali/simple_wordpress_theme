@@ -250,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
       onChange: showRegister => setAttributes({
         showRegister
       })
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('This block is not previewable from the editor. View your site for a live demo.', 'thunder-plus')));
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('This block is not previewable from the editor. View your site for a live demo. You should be logged out to see the modal', 'thunder-plus')));
   }
 });
 }();
