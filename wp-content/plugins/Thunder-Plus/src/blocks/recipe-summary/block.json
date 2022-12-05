@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "apiVersion": 2,
+    "name": "thunder-plus/recipe-summary",
+    "title": "Recipe Summary",
+    "category": "text",
+    "description": "Adds a summary section for a recipe",
+    "textdomain": "thunder-plus",
+    "attributes": {
+      "prepTime": {
+        "type": "string"
+      },
+      "cookTime": {
+        "type": "string"
+      },
+      "course": {
+        "type": "string"
+      }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./index.css"
+  }

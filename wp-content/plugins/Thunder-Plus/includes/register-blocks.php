@@ -14,6 +14,9 @@ function thp_register_blocks(){
         ]],
         ['name' => 'auth-modal', 'options' =>[
             'render_callback' => 'thp_auth_modal_render_cb'
+        ]],
+        ['name' => 'recipe-summary', 'options' =>[
+            'render_callback' => 'thp_recipe_summary_render_cb'
         ]]
     ];
 
