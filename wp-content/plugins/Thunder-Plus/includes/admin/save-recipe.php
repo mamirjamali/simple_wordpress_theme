@@ -8,6 +8,6 @@ function thp_save_post_recipe($postID){
 
     $rating = get_post_meta( $postID, 'recipe_rating', true );
     $rating = empty($rating) ? 0 : floatval($rating);
-
+ 
     update_post_meta( $postID, 'recipe_rating', $rating);
 }

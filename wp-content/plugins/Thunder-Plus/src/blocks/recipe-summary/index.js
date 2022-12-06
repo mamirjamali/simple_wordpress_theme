@@ -40,10 +40,10 @@ registerBlockType('thunder-plus/recipe-summary', {
 
 
     const {rating} = useSelect(select => {
-      const {getCurrentPostAttribute} = select('core/editor')
+      const  meta = select('core/editor').getEditedPostAttribute('meta');
 
       return{
-        rating: getCurrentPostAttribute('meta').recipe_rating
+        rating: meta['recipe_rating']
       }
     })
 
