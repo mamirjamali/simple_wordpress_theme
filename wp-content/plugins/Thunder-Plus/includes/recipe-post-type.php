@@ -41,7 +41,10 @@ function thp_recipe_post_type(){
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 20,
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt'),
+        'supports'           => array( 
+            'title', 'editor', 'author', 'thumbnail',
+             'excerpt', 'custom_fields'
+            ),
         'show_in_rest'       => true,
         'describtion'        => __('A custom post type for recipes'),
         'taxonomies'         => ['category', 'post_tag']
@@ -61,5 +64,13 @@ function thp_recipe_post_type(){
         'single' => true,
         'show_in_rest' => true,
         'default' =>'#'
+    ] );
+
+    register_post_meta( 'recipe', 'recipe_rating', [
+        'type' => 'number',
+        'description'=> __('The rating for recipe', 'thunder-plus'),
+        'single' => true,
+        'default' => 0,
+        'show_in_rest' => true
     ] );
     }

@@ -4,6 +4,7 @@ import {useEntityProp} from '@wordpress/core-data';
 import { Spinner } from '@wordpress/components'
 import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import Rating from '@mui/material/Rating/index.js'
 import icons from '../../icons.js';
 import './main.css';
 
@@ -37,6 +38,16 @@ registerBlockType('thunder-plus/recipe-summary', {
       }
     }, [termIDs]);
 
+
+    const {rating} = useSelect(select => {
+      const {getCurrentPostAttribute} = select('core/editor')
+
+      return{
+        rating: getCurrentPostAttribute('meta').recipe_rating
+      }
+    })
+
+    console.log(rating)
     return (
       <>
         <div {...blockProps}>
@@ -107,6 +118,10 @@ registerBlockType('thunder-plus/recipe-summary', {
             <div className="recipe-metadata">
               <div className="recipe-title">{__('Rating', 'thunder-plus')}</div>
               <div className="recipe-data">
+                <Rating
+                 value={rating}
+                 readOnly
+                />
               </div>
               <i className="bi bi-hand-thumbs-up"></i>
             </div>

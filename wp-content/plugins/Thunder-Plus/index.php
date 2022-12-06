@@ -42,3 +42,4 @@ add_action('cuisine_add_form_fields', 'thp_cuisine_add_form_fields');
 add_action( 'create_cuisine', 'thp_save_cuisine_meta');
 add_action('cuisine_edit_form_fields', 'thp_cuisine_edit_form_fields');
 add_action('edited_cuisine', 'thp_save_cuisine_meta');
+add_action( 'save_post_recipe', 'thp_save_post_recipe');
