@@ -51,6 +51,7 @@ function thp_rest_api_add_rating_handler($request){
         'recipe_rating',
          $avgRating
     );
+    
     do_action('recipe_rate_value',[
         'postID' => $postID,
         'rating' => $rating,
