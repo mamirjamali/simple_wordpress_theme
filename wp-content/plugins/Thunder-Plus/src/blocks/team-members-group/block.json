@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "apiVersion": 2,
+    "name": "thunder-plus/team-members-group",
+    "title": "Team Members Group",
+    "category": "text",
+    "description": "Adds a group for adding team members",
+    "textdomain": "thunder-plus",
+    "attributes": {
+      "columns": {
+        "type": "number",
+        "default": 3
+      },
+      "imageShape": {
+        "type": "string",
+        "default": "hexagon"
+      }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./index.css"
+  }

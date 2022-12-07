@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "apiVersion": 2,
+  "name": "thunder-plus/team-member",
+  "title": "Team Member",
+  "category": "text",
+  "description": "Adds a team member",
+  "textdomain": "thunder-plus",
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string"
+    },
+    "imgID": {
+      "type": "number",
+      "default": 0
+    },
+    "imgAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "imgURL": {
+      "type": "string"
+    },
+    "socialHandles": {
+      "type": "array"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./index.css"
+}

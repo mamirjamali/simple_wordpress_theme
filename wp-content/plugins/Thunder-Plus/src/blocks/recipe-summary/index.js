@@ -38,16 +38,14 @@ registerBlockType('thunder-plus/recipe-summary', {
       }
     }, [termIDs]);
 
+    const { rating } = useSelect(select => {
+      const { getCurrentPostAttribute } = select('core/editor')
 
-    const {rating} = useSelect(select => {
-      const  meta = select('core/editor').getEditedPostAttribute('meta');
-
-      return{
-        rating: meta['recipe_rating']
+      return {
+        rating: getCurrentPostAttribute('meta').recipe_rating
       }
     })
 
-    console.log(rating)
     return (
       <>
         <div {...blockProps}>
