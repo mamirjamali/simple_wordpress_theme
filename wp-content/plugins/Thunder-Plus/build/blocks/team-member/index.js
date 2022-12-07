@@ -70,6 +70,7 @@ __webpack_require__.r(__webpack_exports__);
     setImgPreview(url);
   };
   const imageClass = `wp-image-${imgID} img-${context["thunder-plus/image-shape"]}`;
+  const [activeSocialLink, setActiveSocialLinks] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
     group: "inline"
   }, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
@@ -141,7 +142,12 @@ __webpack_require__.r(__webpack_exports__);
   }, socialHandles.map((handle, index) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       href: handle.url,
-      key: index
+      key: index,
+      onClick: event => {
+        event.preventDefault();
+        setActiveSocialLinks(activeSocialLink === index ? null : index);
+      },
+      className: activeSocialLink === index && isSelected ? "is-active" : ""
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: `bi bi-${handle.icon}`
     }));
@@ -157,10 +163,51 @@ __webpack_require__.r(__webpack_exports__);
           url: ""
         }]
       });
+      setActiveSocialLinks(socialHandles.length);
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
     icon: "plus"
-  }))))));
+  })))), isSelected && activeSocialLink !== null && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "team-member-social-edit-ctr"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('URL', 'thunder-plus'),
+    value: socialHandles[activeSocialLink].url,
+    onChange: url => {
+      const tempLink = {
+        ...socialHandles[activeSocialLink]
+      };
+      const tempSocial = [...socialHandles];
+      tempLink.url = url;
+      tempSocial[activeSocialLink] = tempLink;
+      setAttributes({
+        socialHandles: tempSocial
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon', 'thunder-plus'),
+    value: socialHandles[activeSocialLink].icon,
+    onChange: icon => {
+      const tempLink = {
+        ...socialHandles[activeSocialLink]
+      };
+      const tempSocial = [...socialHandles];
+      tempLink.icon = icon;
+      tempSocial[activeSocialLink] = tempLink;
+      setAttributes({
+        socialHandles: tempSocial
+      });
+    }
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    isDestructive: true,
+    onClick: () => {
+      const tempCopy = [...socialHandles];
+      tempCopy.splice(activeSocialLink, 1);
+      setAttributes({
+        socialHandles: tempCopy
+      });
+      setActiveSocialLinks(null);
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove", "thunder-plus")))));
 }
 
 /***/ }),
