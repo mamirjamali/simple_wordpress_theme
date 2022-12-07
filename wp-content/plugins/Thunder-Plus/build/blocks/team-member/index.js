@@ -31,7 +31,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(_ref) {
   let {
     attributes,
-    setAttributes
+    setAttributes,
+    context,
+    isSelected
   } = _ref;
   const {
     name,
@@ -43,10 +45,54 @@ __webpack_require__.r(__webpack_exports__);
     socialHandles
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
-  const [imgPreview, setPreview] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(imgURL);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  const [imgPreview, setImgPreview] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(imgURL);
+  const selectingImg = img => {
+    let newImgURL = null;
+    if ((0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.isBlobURL)(img.url)) {
+      newImgURL = img.url;
+    } else {
+      newImgURL = img.sizes ? img.sizes.teamMember.url : img.media_details.sizes.teamMember.source_url;
+      setAttributes({
+        imgID: img.id,
+        imgAlt: img.alt,
+        imgURL: newImgURL
+      });
+      (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.revokeBlobURL)(imgPreview);
+    }
+    setImgPreview(newImgURL);
+  };
+  const selectImgFromURL = url => {
+    setAttributes({
+      imgAlt: null,
+      imgID: null,
+      imgURL: url
+    });
+    setImgPreview(url);
+  };
+  const imageClass = `wp-image-${imgID} img-${context["thunder-plus/image-shape"]}`;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
+    group: "inline"
+  }, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarButton, {
+    onClick: () => {
+      setAttributes({
+        imgID: 0,
+        imgAlt: '',
+        imgURL: ''
+      });
+      setImgPreview('');
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Remove Image', 'thunder-plus')), imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaReplaceFlow, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Replace Image', 'thunder-plus'),
+    mediaId: imgID,
+    mediaURL: imgURL,
+    allowedTypes: ['image'],
+    accept: 'image/*',
+    onError: error => console.error(error),
+    onSelect: selectingImg,
+    onSelectURL: selectImgFromURL
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Settings', 'thunder-plus')
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
+  }, imgPreview && !(0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.isBlobURL)(imgPreview) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alt Attribute', 'thunder-plus'),
     value: imgAlt,
     onChange: imgAlt => setAttributes({
@@ -57,35 +103,16 @@ __webpack_require__.r(__webpack_exports__);
     className: "author-meta"
   }, imgPreview && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: imgPreview,
-    alt: imgAlt
+    alt: imgAlt,
+    className: imageClass
   }), (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.isBlobURL)(imgPreview) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Spinner, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaPlaceholder, {
     allowedTypes: ['image'],
     accept: 'image/*',
     icon: "admin-users",
-    onSelect: img => {
-      let newImgURL = null;
-      if ((0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.isBlobURL)(img.url)) {
-        newImgURL = img.url;
-      } else {
-        newImgURL = img.sizes ? img.sizes.teamMember.url : img.media_details.sizes.teamMember.source_url;
-        setAttributes({
-          imgID: img.id,
-          imgAlt: img.alt,
-          imgURL: newImgURL
-        });
-        (0,_wordpress_blob__WEBPACK_IMPORTED_MODULE_4__.revokeBlobURL)(imgPreview);
-      }
-      setPreview(newImgURL);
-    },
+    onSelect: selectingImg,
     onError: error => console.error(error),
     disableMediaButtons: imgPreview,
-    onSelectURL: url => {
-      setAttributes({
-        imgAlt: null,
-        imgID: null,
-        imgURL: url
-      });
-    }
+    onSelectURL: selectImgFromURL
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Name', 'thunder-plus'),
     tagName: "strong",
@@ -111,7 +138,29 @@ __webpack_require__.r(__webpack_exports__);
     value: bio
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "social-links"
-  })));
+  }, socialHandles.map((handle, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      href: handle.url,
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      class: `bi bi-${handle.icon}`
+    }));
+  }), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Add Social Media Icons", "thunder-plus")
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "#",
+    onClick: event => {
+      event.preventDefault();
+      setAttributes({
+        socialHandles: [...socialHandles, {
+          icon: "question",
+          url: ""
+        }]
+      });
+    }
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+    icon: "plus"
+  }))))));
 }
 
 /***/ }),

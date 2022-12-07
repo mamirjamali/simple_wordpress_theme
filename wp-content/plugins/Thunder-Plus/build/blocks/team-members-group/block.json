@@ -17,5 +17,8 @@
     }
   },
   "editorScript": "file:./index.js",
-  "style": "file:./index.css"
+  "style": "file:./index.css",
+  "providesContext": {
+    "thunder-plus/image-shape": "imageShape"
+  }
 }
