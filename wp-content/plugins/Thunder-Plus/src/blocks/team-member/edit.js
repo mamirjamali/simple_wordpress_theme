@@ -60,7 +60,11 @@ export default function ({ attributes, setAttributes, context, isSelected }) {
       const imageClass = `wp-image-${imgID} img-${context["thunder-plus/image-shape"]}`;
 
       const [activeSocialLink, setActiveSocialLinks] = useState(null);
-
+      
+      setAttributes({
+        imageShape: context["thunder-plus/image-shape"]
+      })
+       
     return (
       <>
         <BlockControls group="inline">
