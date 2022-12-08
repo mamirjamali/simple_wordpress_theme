@@ -24,7 +24,7 @@ export default function ({ attributes }) {
         <div class="social-links">
           {socialHandles.map(handel => {
             return (
-            <a href={handel.url}>
+            <a href={handel.url} date-icon={handel.icon}>
               <i class={`bi bi-${handel.icon}`}></i>
             </a>
             );

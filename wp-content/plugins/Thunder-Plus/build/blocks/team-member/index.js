@@ -271,7 +271,8 @@ __webpack_require__.r(__webpack_exports__);
     class: "social-links"
   }, socialHandles.map(handel => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-      href: handel.url
+      href: handel.url,
+      "date-icon": handel.icon
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       class: `bi bi-${handel.icon}`
     }));
