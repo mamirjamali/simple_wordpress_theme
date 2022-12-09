@@ -22,5 +22,5 @@
   "usesContext": [
     "postId"
   ],
-  "script": "file:./frontend.js"
+  "viewScript": "file:./frontend.js"
 }

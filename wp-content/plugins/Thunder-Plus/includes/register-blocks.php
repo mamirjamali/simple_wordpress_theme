@@ -19,7 +19,10 @@ function thp_register_blocks(){
             'render_callback' => 'thp_recipe_summary_render_cb'
         ]],
         ['name' => 'team-members-group'],
-        ['name' => 'team-member']
+        ['name' => 'team-member'],
+        ['name' => 'popular-recipes', 'options' =>[
+            'render_callback' => 'thp_popular_recipes_render_cb'
+        ]],
     ];
 
     foreach($blocks as $block){

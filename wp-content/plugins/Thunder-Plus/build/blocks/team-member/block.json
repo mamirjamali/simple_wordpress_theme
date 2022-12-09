@@ -8,19 +8,13 @@
   "textdomain": "thunder-plus",
   "attributes": {
     "name": {
-      "type": "string",
-      "source": "html",
-      "selector": ".author-meta strong"
+      "type": "string"
     },
     "title": {
-      "type": "string", 
-      "source": "html",
-      "selector": ".author-meta span"
+      "type": "string"
     },
     "bio": {
-      "type": "string",
-      "source": "html",
-      "selector": ".member-bio p"
+      "type": "string"
     },
     "imgID": {
       "type": "number",
@@ -28,16 +22,10 @@
     },
     "imgAlt": {
       "type": "string",
-      "default": "",
-      "source": "attribute",
-      "selector": "img",
-      "attribute": "alt"
+      "default": ""
     },
     "imgURL": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "img",
-      "attribute": "src"
+      "type": "string"
     },
     "socialHandles": {
       "type": "array",
@@ -50,19 +38,7 @@
           "url": "https://instagram.com",
           "icon": "instagram"
         }
-      ],
-      "source": "query",
-      "selector": ".social-links a",
-      "query": {
-        "url":{
-           "source": "attribute",
-           "attribute": "href"
-        },
-        "icon":{
-          "source": "attribute",
-          "attribute": "data-icon"
-        }
-      }
+      ]
     },
     "imageShape": {
       "type": "string",

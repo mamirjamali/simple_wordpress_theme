@@ -20,30 +20,5 @@
   "style": "file:./index.css",
   "providesContext": {
     "thunder-plus/image-shape": "imageShape"
-  },
-  "example": {
-    "attributes": {
-      "columns": 2
-    },
-    "innerBlocks": [
-      {
-        "name": "thunder-plus/team-member",
-        "attributes":{
-          "Name": "John smith",
-          "title": "CEO of Google",
-          "bio": "This a examole bio",
-          "imgURL": "https://i.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g"
-        }
-      },
-      {
-        "name": "thunder-plus/team-member",
-        "attributes":{
-          "Name": "John Doe",
-          "title": "CEO of Google",
-          "bio": "This a examole bio",
-          "imgURL": "https://i.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g"
-        }
-      }
-    ]
   }
 }

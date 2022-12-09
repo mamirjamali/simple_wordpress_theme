@@ -31831,6 +31831,9 @@ function RecipeRating(props) {
       console.log(response);
       if (response.status == 2) {
         setAvgRating(response.rating);
+        return alert("Thank you for your rating!");
+      } else {
+        return alert("You have already rated this recipe.");
       }
     }
   });
@@ -31842,8 +31845,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const loggedIn = !!block.dataset.loggedIn;
   const ratingCount = !!parseInt(block.dataset.ratingCount);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(RecipeRating, {
-    postID: postId,
-    avgRating: avgRsting,
+    postID: postID,
+    avgRating: avgRating,
     loggedIn: loggedIn,
     ratingCount: ratingCount
   }), block);

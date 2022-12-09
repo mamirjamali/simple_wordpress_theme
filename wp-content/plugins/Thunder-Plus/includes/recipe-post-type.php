@@ -43,7 +43,7 @@ function thp_recipe_post_type(){
         'menu_position'      => 20,
         'supports'           => array( 
             'title', 'editor', 'author', 'thumbnail',
-             'excerpt', 'custom_fields'
+             'excerpt', 'custom-fields'
             ),
         'show_in_rest'       => true,
         'describtion'        => __('A custom post type for recipes'),
@@ -70,7 +70,7 @@ function thp_recipe_post_type(){
         'type' => 'number',
         'description'=> __('The rating for recipe', 'thunder-plus'),
         'single' => true,
+        'show_in_rest' => true,
         'default' => 0,
-        'show_in_rest' => true
     ] );
     }

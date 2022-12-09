@@ -2,7 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import {useEntityProp} from '@wordpress/core-data';
 import { Spinner } from '@wordpress/components'
-import { useSelect } from '@wordpress/data';
+import { useSelect, withSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import Rating from '@mui/material/Rating/index.js'
 import icons from '../../icons.js';
@@ -40,11 +40,10 @@ registerBlockType('thunder-plus/recipe-summary', {
 
     const { rating } = useSelect(select => {
       const { getCurrentPostAttribute } = select('core/editor')
-
       return {
         rating: getCurrentPostAttribute('meta').recipe_rating
       }
-    })
+    });
 
     return (
       <>

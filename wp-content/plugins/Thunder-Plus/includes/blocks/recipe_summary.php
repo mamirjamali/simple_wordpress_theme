@@ -1,10 +1,10 @@
 <?php
 
-function up_recipe_summary_render_cb($atts, $content, $block) {
+function thp_recipe_summary_render_cb($atts, $content, $block) {
   $prepTime = isset($atts['prepTime']) ? esc_html($atts['prepTime']) : '' ;
   $cookTime = isset($atts['cookTime']) ? esc_html($atts['cookTime']) : '' ;
   $course = isset($atts['course']) ? esc_html($atts['course']) : '' ;
-
+  
   $postID = $block->context['postId'];
   $postTerms = get_the_terms($postID, 'cuisine');
   $postTerms = is_array($postTerms) ? $postTerms : [];

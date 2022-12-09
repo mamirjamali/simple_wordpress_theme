@@ -2,7 +2,6 @@
 
 function thp_save_post_recipe($postID){
     if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
-
         return;
     }
 

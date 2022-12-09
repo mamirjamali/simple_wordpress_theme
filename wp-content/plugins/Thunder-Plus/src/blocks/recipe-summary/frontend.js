@@ -28,6 +28,9 @@ function RecipeRating(props){
             console.log(response)
             if(response.status == 2){
                 setAvgRating(response.rating)
+                return alert("Thank you for your rating!")
+            }else{
+                return alert("You have already rated this recipe.")
             }
          }}
         />
@@ -43,8 +46,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     render(
     <RecipeRating
-      postID={postId}
-      avgRating={avgRsting}
+      postID={postID}
+      avgRating={avgRating}
       loggedIn={loggedIn}
       ratingCount={ratingCount}
     />,
