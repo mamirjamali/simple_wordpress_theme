@@ -10,7 +10,6 @@ function thp_recipe_summary_render_cb($atts, $content, $block) {
   $postTerms = is_array($postTerms) ? $postTerms : [];
   $cuisines = '';
   $lastKey = array_key_last($postTerms);
-
   foreach($postTerms as $key => $term) {
     $url = get_term_meta($term->term_id, 'more_info_url', true);
     $comma = $key === $lastKey ? '' : ',';

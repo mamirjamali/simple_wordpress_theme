@@ -3,7 +3,7 @@
 function thp_popular_recipes_render_cb($atts){
 
     $title = esc_html( $atts['title'] );
-    print_r($atts);
+
     $cuisineIDs = array_map(function($term){
         return $term['id'];
     }, 

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "apiVersion": 2,
+    "name": "thunder-plus/daily-recipe",
+    "title": "Daily Recipe",
+    "category": "text",
+    "description": "Displays a random recipe each day",
+    "textdomain": "thunder-plus",
+    "attributes": {
+      "title": {
+        "type": "string",
+        "default": "Recipe of the Day"
+      }
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./index.css"
+  }

@@ -46,12 +46,12 @@ registerBlockType('thunder-plus/popular-recipes', {
      [count, cuisinesIDs]
     );
 
-    // console.log(posts)
     return (
       <>
         <InspectorControls>
           <PanelBody title={__('Settings', 'thunder-plus')}>
             <QueryControls 
+             title = "Select Cusinies to filter"
              numberOfItems={count}
              minItems={1}
              maxItems={10}
@@ -109,9 +109,9 @@ registerBlockType('thunder-plus/popular-recipes', {
 
                   <div class="single-post-detail">
                     <a href={post.link}>
-                      {/* <RawHTML> */}
+                      <RawHTML>
                         {post.title.rendered}
-                      {/* </RawHTML> */}
+                      </RawHTML>
                     </a>
                     <span>
                       by <a href={post.link}>{post._embedded.author[0].name}</a>

@@ -23,6 +23,9 @@ function thp_register_blocks(){
         ['name' => 'popular-recipes', 'options' =>[
             'render_callback' => 'thp_popular_recipes_render_cb'
         ]],
+        ['name' => 'daily-recipe', 'options' =>[
+            'render_callback' => 'thp_daily_recipe_render_cb'
+        ]],
     ];
 
     foreach($blocks as $block){
