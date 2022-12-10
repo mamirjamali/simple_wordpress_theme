@@ -1,0 +1,36 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ div.wp-block-u-plus-alert-box {
+	padding: 2rem;
+	border-radius: 0.25rem;
+	display: flex;
+	border: 1px solid transparent;
+	align-items: center;
+
+	&.is-style-accented {
+		border-top: none;
+		border-right: none;
+		border-bottom: none;
+		border-left-width: 6px;
+		background-color: transparent !important;
+		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+	}
+
+	.dashicon {
+		margin-right: 2rem;
+		font-size: 2rem;
+	}
+
+	.alert-box-content {
+		width: 100%;
+	}
+
+	&.alignfull {
+		border-radius: 0; 
+	}
+}
