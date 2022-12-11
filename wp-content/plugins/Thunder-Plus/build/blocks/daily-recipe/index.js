@@ -2,15 +2,86 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/daily-recipe/main.css":
+/*!******************************************!*\
+  !*** ./src/blocks/daily-recipe/main.css ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "@wordpress/api-fetch":
+/*!**********************************!*\
+  !*** external ["wp","apiFetch"] ***!
+  \**********************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["apiFetch"];
+
+/***/ }),
+
+/***/ "@wordpress/block-editor":
+/*!*************************************!*\
+  !*** external ["wp","blockEditor"] ***!
+  \*************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["blockEditor"];
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!********************************!*\
+  !*** external ["wp","blocks"] ***!
+  \********************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["i18n"];
+
+/***/ }),
+
 /***/ "./src/icons.js":
 /*!**********************!*\
   !*** ./src/icons.js ***!
   \**********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   search: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -115,78 +186,6 @@ __webpack_require__.r(__webpack_exports__);
   }))
 });
 
-/***/ }),
-
-/***/ "./src/blocks/daily-recipe/main.css":
-/*!******************************************!*\
-  !*** ./src/blocks/daily-recipe/main.css ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "@wordpress/api-fetch":
-/*!**********************************!*\
-  !*** external ["wp","apiFetch"] ***!
-  \**********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["apiFetch"];
-
-/***/ }),
-
-/***/ "@wordpress/block-editor":
-/*!*************************************!*\
-  !*** external ["wp","blockEditor"] ***!
-  \*************************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["blockEditor"];
-
-/***/ }),
-
-/***/ "@wordpress/blocks":
-/*!********************************!*\
-  !*** external ["wp","blocks"] ***!
-  \********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["blocks"];
-
-/***/ }),
-
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
-/***/ "@wordpress/i18n":
-/*!******************************!*\
-  !*** external ["wp","i18n"] ***!
-  \******************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["i18n"];
-
 /***/ })
 
 /******/ 	});
@@ -216,35 +215,6 @@ module.exports = window["wp"]["i18n"];
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -265,17 +235,11 @@ var __webpack_exports__ = {};
   \******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
 /* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main.css */ "./src/blocks/daily-recipe/main.css");
 
@@ -308,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
       title: null
     });
     (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(async () => {
-      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4___default()({
+      const response = await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4__({
         path: "thp/v1/daily-recipe"
       });
       setPost({

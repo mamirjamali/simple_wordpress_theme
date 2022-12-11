@@ -22,6 +22,7 @@ if(!function_exists('add_action')){
 
 //Setup
 define('THP_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('THP_PLUGIN_FILE', __FILE__);
 
 //Includes
 $rootFiles         = glob(THP_PLUGIN_DIR."includes/*.php");
@@ -46,3 +47,8 @@ add_action( 'save_post_recipe', 'thp_save_post_recipe');
 add_action('after_setup_theme', 'thp_setup_theme');
 add_filter('image_size_names_choose', 'thp_custom_image_sizes');
 add_filter( 'rest_recipe_query', 'thp_rest_recipe_query', 10, 2);
+add_action('admin_menu', 'thp_admin_menu');
+add_action('admin_post_thp_save_options', 'thp_send_options');
+add_action('admin_enqueue_scripts', 'thp_admin_enqueue');
+add_action( 'init', 'thp_register_asset');
+add_action('admin_init', 'thp_settings_api');

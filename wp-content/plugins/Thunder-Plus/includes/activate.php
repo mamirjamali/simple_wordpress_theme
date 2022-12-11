@@ -23,4 +23,16 @@ function thp_active_plugin(){
 
     require_once(ABSPATH. "/wp-admin/includes/upgrade.php");
     dbDelta( $sql);
+    
+    $options = get_option('thp_options');
+
+    if(!$options){
+        add_option( 'thp_options', [
+            'og_title' => get_bloginfo( 'name'),
+            'og_image' => '',
+            'og_description' => get_bloginfo('description'),
+            'enable_og' => 1
+        ]);
+    }
+
 }

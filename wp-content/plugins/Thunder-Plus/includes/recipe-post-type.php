@@ -73,4 +73,14 @@ function thp_recipe_post_type(){
         'show_in_rest' => true,
         'default' => 0,
     ] );
-    }
+
+    register_post_meta( 
+        '',
+        'og_title',
+        [
+            'single' => true,
+            'type'  => 'string',
+            'show_in_rest' => true
+        ]
+    );
+}
