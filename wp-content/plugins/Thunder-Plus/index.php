@@ -54,3 +54,5 @@ add_action( 'init', 'thp_register_asset');
 add_action('admin_init', 'thp_settings_api');
 add_action('enqueue_block_editor_assets', 'thp_enqueue_block_editor_assets');
 add_action('wp_head', 'thp_wp_head');
+add_action('init', 'thp_load_php_translations');
+add_action('wp_enqueue_scripts', 'thp_load_block_translation',100)

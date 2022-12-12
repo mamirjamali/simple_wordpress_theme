@@ -12,4 +12,6 @@ function thp_enqueue_scripts(){
          "const thp_auth_rest = {$authURL}", 
          'after' 
     );
+
+    wp_enqueue_style("thp_editor");
 }

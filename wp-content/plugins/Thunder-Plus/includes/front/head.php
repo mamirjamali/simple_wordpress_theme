@@ -24,7 +24,7 @@ function thp_wp_head(){
         $imagePreview = get_post_meta( $postID, 'og_override_image', true);
         $image = $imagePreview  ? 
         get_post_meta( $postID, 'og_image', true) :
-        get_the_post_thumbnail( 'openGraph');
+        get_the_post_thumbnail( $postID,'openGraph');
     }
 
     ?>
@@ -36,6 +36,6 @@ function thp_wp_head(){
       content="<?php echo esc_attr($image); ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url"
-      content="<?php echo esc_attr($url);?>"
+      content="<?php echo esc_attr($url);?>"/>
     <?php
 }

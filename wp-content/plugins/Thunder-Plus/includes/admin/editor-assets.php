@@ -5,6 +5,7 @@ function thp_enqueue_block_editor_assets(){
     if($current_screen->base == "site-editor"){
         return;
     }
-    
+
     wp_enqueue_script( 'thp_editor');
+    wp_enqueue_style( 'thp_editor');
 }

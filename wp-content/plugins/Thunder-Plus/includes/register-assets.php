@@ -25,4 +25,9 @@ function thp_register_asset(){
          $editorAssets['version'], 
          true
     );
+
+    wp_register_style( 
+        'thp_editor',
+         plugins_url('/build/block-editor/index.css', THP_PLUGIN_FILE),
+    );
 }
