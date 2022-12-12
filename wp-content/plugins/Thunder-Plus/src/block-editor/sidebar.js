@@ -7,8 +7,9 @@ import {
     TextControl,
     TextareaControl,
     ToggleControl,
-} from '@wordpress/components'
-
+    Button,
+} from '@wordpress/components';
+import {MediaUpload, MediaUploadCheck} from '@wordpress/block-editor';
 
 registerPlugin("thp-sidebar", {
     render (){
@@ -59,11 +60,38 @@ registerPlugin("thp-sidebar", {
                     onChange={og_override_image => 
                         editPost({
                             meta: {
-                                og_override_image,
+                                og_override_image: og_override_image,
                             },
                         })
                     }
+                    
                 />
+                
+                {
+                    og_override_image &&
+                    <>
+                    <img src={og_image}/>
+                    <MediaUploadCheck>
+                        <MediaUpload
+                        accept={["image"]}
+                        render={( {open} ) => {
+                            return(
+                                <Button isPrimary onClick={open}>
+                                    {__("Change Image", "thunder-plus")}
+                                </Button>
+                            );
+                        }}
+                        onSelect={(image) => {
+                            editPost({
+                                meta: {
+                                    og_image: image.sizes.openGraph.url,
+                                },
+                            })
+                        }}
+                        />
+                    </MediaUploadCheck>
+                    </>
+                }
                 </PanelBody>
             </PluginSidebar>
         )
