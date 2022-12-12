@@ -52,3 +52,4 @@ add_action('admin_post_thp_save_options', 'thp_send_options');
 add_action('admin_enqueue_scripts', 'thp_admin_enqueue');
 add_action( 'init', 'thp_register_asset');
 add_action('admin_init', 'thp_settings_api');
+add_action('enqueue_block_editor_assets', 'thp_enqueue_block_editor_assets');
