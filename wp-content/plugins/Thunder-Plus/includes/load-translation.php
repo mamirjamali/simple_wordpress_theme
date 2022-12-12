@@ -29,7 +29,7 @@ function thp_load_block_translation(){
         wp_set_script_translations( 
             $block, 
             "thunder-plus", 
-             UP_PLUGIN_DIR . "languages"
+             THP_PLUGIN_DIR . "languages"
         );
       }
 }
